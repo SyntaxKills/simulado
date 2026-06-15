@@ -115,5 +115,42 @@
             if (selecionado) {
                 promptTexto += `Instância ${q.id}: Resposta submetida pelo usuário = Opção [${selecionado.value}]\\n`;
             } else {
-                promptTexto += `Instância ${
+                promptTexto += `Instância ${q.id}: Nenhuma opção selecionada pelo usuário.\\n`;
+            }
+            gabaritoLista += `Q${q.id}: ${q.correta}\\n`;
+        });
+        
+        promptTexto += gabaritoLista;
+        promptTexto += "\\nInstruções de Resposta: Apresente o total de acertos e forneça uma revisão curta por linha para cada item indicando o status (Correto ou Incorreto) e explicando sucintamente a lógica de forma elegante e limpa.";
 
+        btnProcessar.disabled = true;
+        statusCarregando.style.display = "block";
+        blocoResultado.style.display = "none";
+
+        try {
+            const urlFinal = `https://api.bk9.dev/ai/gemini?q=${encodeURIComponent(promptTexto)}`;
+            const requisicao = await fetch(urlFinal);
+            const dadosObtidos = await requisicao.json();
+
+            if (dadosObtidos && dadosObtidos.status && dadosObtidos.BK9) {
+                let textoTratado = dadosObtidos.BK9.replace(/\*\*/g, '');
+                respostaIA.innerHTML = textoTratado;
+            } else {
+                respostaIA.innerHTML = "Falha crítica: O motor analítico retornou uma estrutura de dados inválida.";
+            }
+        } catch (erro) {
+            console.error(erro);
+            respostaIA.innerHTML = `Falha de rede: Não foi possível completar a transmissão de dados. Detalhes: ${erro.message}`;
+        } finally {
+            statusCarregando.style.display = "none";
+            blocoResultado.style.display = "block";
+            btnProcessar.disabled = false;
+            window.scrollTo({top: blocoResultado.offsetTop, behavior: 'smooth'});
+        }
+    }
+
+    window.onload = carregarQuestoesDoArquivo;
+</script>
+
+</body>
+</html>
