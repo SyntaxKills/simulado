@@ -168,7 +168,7 @@
             cursor: pointer;
             transition: opacity 0.2s ease, transform 0.1s ease;
             margin-top: 40px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .botao-comando:hover {
@@ -190,8 +190,10 @@
             text-align: center;
             font-size: 0.9rem;
             color: var(--texto-secundario);
+            margin-top: 15px;
             margin-bottom: 40px;
             padding: 0 10px;
+            line-height: 1.4;
         }
 
         .status-carregamento {
@@ -237,7 +239,7 @@
     <form id="formularioQuiz">
         
         <div class="secao-categoria">
-            <h2>Fazendo Aprendizado de Máquina</h2>
+            <h2>Aprendizado de Máquina</h2>
         </div>
         <div class="resumo-tecnico">
             Os Algoritmos Genéticos utilizam a lógica computacional inspirada em teorias biológicas para resolver problemas complexos. Eles simulam a evolução natural manipulando estruturas de dados que representam conjuntos de dados e critérios de aptidão. Através de operadores matemáticos que mimetizam a hereditariedade e a variação biológica, o algoritmo busca de forma iterativa as soluções mais eficientes dentro de um espaço de busca.
@@ -256,7 +258,7 @@
 
         <div class="cartao-questao">
             <span class="num-questao">Questão 02</span>
-            <div class="texto-questao">O que representa o concept de "População" nesse tipo de algoritmo?</div>
+            <div class="texto-questao">O que representa o conceito de "População" nesse tipo de algoritmo?</div>
             <ul class="lista-opcoes">
                 <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="A" class="opcao-input"> A) O conjunto de todas as restrições e regras matemáticas que o código deve seguir.</label></li>
                 <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="B" class="opcao-input"> B) O total de computadores conectados em rede para rodar o sistema.</label></li>
@@ -529,7 +531,7 @@
             <div class="texto-questao">As arquiteturas de redes atuais utilizam diferentes modelos para organizar a transmissão de dados e a gerência de recursos. Qual característica diferencia o modelo Cliente/Servidor do modelo Não-Hierárquico (Ponto a Ponto)?</div>
             <ul class="lista-opcoes">
                 <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="A" class="opcao-input"> A) O modelo cliente/servidor elimina a necessidade de cabos e meios de transmissão, enquanto o ponto a ponto exige satélites.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="B" class="opcao-input"> B) No modelo cliente/servidor existe uma hierarquia onde um equipamento diferenciado (servidor) controla os serviços centrais; já no modelo ponto a ponto não há hierarquia, e cada máquina pode alternar e exercer funções de cliente e servidor.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="B" class="opcao-input"> B) No modelo cliente/servidor existe uma hierarquia onde um equipamento diferenciado (servidor) controla os serviços centrais; já no modelo ponto a ponto não há hierarquia, og cada máquina pode alternar e exercer funções de cliente e servidor.</label></li>
                 <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="C" class="opcao-input"> C) O modelo ponto a ponto é utilizado apenas quando a administração da rede é extremamente complexa e envolve milhares de dispositivos.</label></li>
                 <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="D" class="opcao-input"> D) No modelo cliente/servidor, o usuário não sabe que os computadores estão interconectados, fazendo a rede parecer um sistema único e transparente.</label></li>
             </ul>
@@ -546,7 +548,7 @@
             </ul>
         </div>
 
-        <button type="button" id="btnProcessar" class="botao-comando" onclick="executarDiagnostico()">Finalizar e Corrigir com IA</button>
+        <button type="button" id="btnProcessar" class="botao-comando" onclick="executarAnaliseFinal()">Finalizar e Corrigir com IA</button>
     </form>
 
     <div class="rodape-aviso">
@@ -562,7 +564,7 @@
 </div>
 
 <script>
-    async function executarDiagnostico() {
+    async function executarAnaliseFinal() {
         const blocoResultado = document.getElementById('bloco-resultado');
         const respostaIA = document.getElementById('respostaIA');
         const statusCarregando = document.getElementById('statusCarregando');
@@ -610,3 +612,4 @@
 
 </body>
 </html>
+
