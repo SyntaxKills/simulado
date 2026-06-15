@@ -3,26 +3,280 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Simulado - Modo Dinâmico</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Interface de Simulado - Ciência de Dados</title>
+    <style>
+        :root {
+            --bg-principal: #0a0c10;
+            --bg-card: #161b22;
+            --bg-item: #21262d;
+            --bg-item-hover: #30363d;
+            --borda: #30363d;
+            --borda-foco: #58a6ff;
+            --texto-principal: #f0f6fc;
+            --texto-secundario: #8b949e;
+            --azul-neon: #58a6ff;
+            --sucesso: #3fb950;
+            --erro: #f85149;
+            --alerta: #d29922;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 850px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid var(--borda);
+            padding-bottom: 24px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--texto-principal);
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: var(--texto-secundario);
+            font-size: 1rem;
+        }
+
+        .cartao-questao {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            padding: 28px;
+            margin-bottom: 30px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cartao-questao:hover {
+            border-color: #444c56;
+        }
+
+        .num-questao {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--azul-neon);
+            margin-bottom: 12px;
+            padding: 4px 8px;
+            background-color: rgba(88, 166, 255, 0.1);
+            border-radius: 6px;
+        }
+
+        .texto-questao {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--texto-principal);
+            margin-bottom: 24px;
+        }
+
+        .lista-opcoes {
+            list-style: none;
+        }
+
+        .opcao-item {
+            margin-bottom: 12px;
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            background-color: var(--bg-item);
+            transition: all 0.2s ease;
+        }
+
+        .opcao-item:hover {
+            background-color: var(--bg-item-hover);
+            border-color: #8b949e;
+        }
+
+        .opcao-label {
+            display: flex;
+            align-items: center;
+            padding: 14px 18px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            color: var(--texto-principal);
+        }
+
+        .opcao-input {
+            margin-right: 16px;
+            width: 18px;
+            height: 18px;
+            accent-color: var(--azul-neon);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .botao-comando {
+            display: block;
+            width: 100%;
+            background-color: var(--azul-neon);
+            color: #0d1117;
+            border: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s ease, transform 0.1s ease;
+            margin-top: 20px;
+        }
+
+        .botao-comando:hover {
+            opacity: 0.9;
+        }
+
+        .botao-comando:active {
+            transform: scale(0.99);
+        }
+
+        .botao-comando:disabled {
+            background-color: var(--bg-item);
+            color: var(--texto-secundario);
+            cursor: not-allowed;
+            border: 1px solid var(--borda);
+        }
+
+        .status-carregamento {
+            text-align: center;
+            color: var(--azul-neon);
+            font-weight: 500;
+            margin: 24px 0;
+            display: none;
+            font-size: 1rem;
+        }
+
+        #bloco-resultado {
+            margin-top: 40px;
+            display: none;
+        }
+
+        .titulo-resultado {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .painel-ia {
+            background-color: var(--bg-card);
+            border: 1px solid var(--borda);
+            border-radius: 12px;
+            padding: 24px;
+            white-space: pre-wrap;
+            font-size: 1rem;
+            color: var(--texto-principal);
+            border-left: 4px solid var(--azul-neon);
+        }
+    </style>
 </head>
 <body>
 
 <div class="container">
     <header>
         <h1>Módulo de Avaliação Cognitiva</h1>
-        <p>Interface Dinâmica conectada ao questions.txt</p>
+        <p>Análise Exploratória de Dados e Fundamentos de Data Science</p>
     </header>
     
-    <div id="container-erro" style="display: none;"></div>
-
     <form id="formularioQuiz">
-        <div id="espaco-perguntas"></div>
+        <!-- Questão 1 -->
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 01</span>
+            <div class="texto-questao">Durante a fase inicial de um projeto de inteligência artificial, por que um analista deve conduzir uma Análise Exploratória de Dados (EDA) antes de treinar qualquer modelo preditivo?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="A" class="opcao-input"> a) Para ignorar a etapa de tratamento de dados e economizar tempo de processamento.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="B" class="opcao-input"> a) b) Para mapear o comportamento das variáveis, reconhecer anomalias e descobrir padrões ocultos na base.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="C" class="opcao-input"> c) Para converter automaticamente todas as colunas de texto em formato numérico.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="D" class="opcao-input"> d) Para reduzir obrigatoriamente o volume do banco de dados para menos de mil registros.</label></li>
+            </ul>
+        </div>
+
+        <!-- Questão 2 -->
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 02</span>
+            <div class="texto-questao">Quais recursos visuais de estatística são amplamente recomendados para avaliar a dispersão, os limites e o comportamento de frequência das variáveis na EDA?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="A" class="opcao-input"> a) Gráficos de pizza com efeitos tridimensionais e logotipos corporativos.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="B" class="opcao-input"> b) Histogramas e diagramas Boxplot.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="C" class="opcao-input"> c) Listas de texto puro ordenadas por ordem alfabética.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="D" class="opcao-input"> d) Diagramas de fluxo de blocos de servidores de rede.</label></li>
+            </ul>
+        </div>
+
+        <!-- Questão 3 -->
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 03</span>
+            <div class="texto-questao">Ao analisar a estrutura de um gráfico Boxplot, quais parâmetros estatísticos de posição dividem o conjunto de dados ordenado em fatias equivalentes de 25%?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="A" class="opcao-input"> a) O valor médio, a variância amostral e o desvio padrão.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="B" class="opcao-input"> b) O limite mínimo absoluto e o limite máximo absoluto.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="C" class="opcao-input"> c) A mediana, o primeiro quartil e o terceiro quartil.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="D" class="opcao-input"> d) A média aritmética simples e o erro padrão da amostra.</label></li>
+            </ul>
+        </div>
+
+        <!-- Questão 4 -->
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 04</span>
+            <div class="texto-questao">Trabalhando com a biblioteca Pandas em Python, qual método sintetiza de forma automatizada indicadores como média, desvio padrão, mínimos, máximos e quartis de um DataFrame?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="A" class="opcao-input"> a) df.head()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="B" class="opcao-input"> b) df.sum()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="C" class="opcao-input"> c) df.describe()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="D" class="opcao-input"> d) df.show_all()</label></li>
+            </ul>
+        </div>
+
+        <!-- Questão 5 -->
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 05</span>
+            <div class="texto-questao">Em ciência de dados, como podemos caracterizar conceitualmente um outlier presente em uma população de dados?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="A" class="opcao-input"> a) Um dado numérico que corresponde exatamente ao ponto central da média.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="B" class="opcao-input"> b) Uma observação atípica que exibe um distanciamento extremo e discrepante em relação ao padrão do restante do grupo.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="C" class="opcao-input"> c) Qualquer registro numérico que assuma um valor menor que zero.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="D" class="opcao-input"> d) A variável de categoria que apresenta a maior taxa de repetição na amostra.</label></li>
+            </ul>
+        </div>
+
+        <!-- Questão 6 -->
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 06</span>
+            <div class="texto-questao">Se uma base de dados contendo o faturamento de pequenas lojas de bairro incluir por engano o faturamento de uma multinacional bilionária, qual será o impacto dessa anomalia na média aritmética?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="A" class="opcao-input"> a) A média permanecerá inalterada, mantendo a representatividade do grupo original.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="B" class="opcao-input"> b) A média sofrerá uma distorção severa, sendo puxada para cima e deixando de refletir a realidade da maioria das pequenas empresas.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="C" class="opcao-input"> c) O cálculo da média será automaticamente bloqueado pelo interpretador Python.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="D" class="opcao-input"> d) A média passará a espelhar perfeitamente o valor exato da moda.</label></li>
+            </ul>
+        </div>
 
         <button type="button" id="btnProcessar" class="botao-comando" onclick="executarDiagnostico()">Transmitir Respostas para Validação da IA</button>
     </form>
 
-    <div id="statusCarregando" class="status-carregamento">Analisando dados com o motor remoto Gemini... Por favor, aguarde.</div>
+    <div id="statusCarregando" class="status-carregamento">Estabelecendo conexão com o motor analítico Gemini... Aguarde processamento.</div>
     
     <div id="bloco-resultado">
         <h2 class="titulo-resultado">Diagnóstico de Desempenho</h2>
@@ -31,97 +285,24 @@
 </div>
 
 <script>
-    let bancoQuestoes = [];
-
-    async function carregarQuestoesDoArquivo() {
-        const espacoPerguntas = document.getElementById('espaco-perguntas');
-        const containerErro = document.getElementById('container-erro');
-        
-        try {
-            const respostaTxt = await fetch('questions.txt');
-            if (!respostaTxt.ok) {
-                throw new Error('Não foi possível localizar ou ler o arquivo questions.txt na raiz do diretório.');
-            }
-            
-            const textoBruto = await respostaTxt.text();
-            const blocos = textoBruto.split(/\n\s*\n/);
-            let idQuestao = 1;
-            
-            blocos.forEach(bloco => {
-                const linhas = bloco.trim().split('\n');
-                if (linhas.length >= 6) {
-                    let enunciado = linhas[0];
-                    let altA = linhas[1];
-                    let altB = linhas[2];
-                    let altC = linhas[3];
-                    let altD = líneas[4];
-                    let gabarito = linhas[5].replace('Gabarito:', '').trim();
-                    
-                    bancoQuestoes.push({
-                        id: idQuestao,
-                        enunciado: enunciado,
-                        opcoes: [altA, altB, altC, altD],
-                        correta: gabarito
-                    });
-                    
-                    let htmlCard = `
-                        <div class="cartao-questao">
-                            <span class="num-questao">Instância ${String(idQuestao).padStart(2, '0')}</span>
-                            <div class="texto-questao">${enunciado}</div>
-                            <ul class="lista-opcoes">
-                    `;
-                    
-                    const letras = ['A', 'B', 'C', 'D'];
-                    for (let j = 0; j < 4; j++) {
-                        htmlCard += `
-                            <li class="opcao-item">
-                                <label class="opcao-label">
-                                    <input type="radio" name="q${idQuestao}" value="${letras[j]}" class="opcao-input">
-                                    ${linhas[j+1]}
-                                </label>
-                            </li>
-                        `;
-                    }
-                    
-                    htmlCard += `</ul></div>`;
-                    espacoPerguntas.innerHTML += htmlCard;
-                    idQuestao++;
-                }
-            });
-            
-        } catch (erro) {
-            containerErro.style.display = 'block';
-            containerErro.className = 'status-erro';
-            containerErro.innerHTML = `Erro de inicialização: ${erro.message}<br>Verifique se o arquivo questions.txt está na mesma pasta da sua página web.`;
-        }
-    }
-
     async function executarDiagnostico() {
         const blocoResultado = document.getElementById('bloco-resultado');
         const respostaIA = document.getElementById('respostaIA');
         const statusCarregando = document.getElementById('statusCarregando');
         const btnProcessar = document.getElementById('btnProcessar');
         
-        if (bancoQuestoes.length === 0) {
-            alert('Nenhuma questão carregada da base de dados.');
-            return;
-        }
-
-        let promptTexto = "Atue como um instrutor analítico em Ciência de Dados. Avalie as escolhas do usuário abaixo, compare com o gabarito fornecido e retorne uma avaliação técnica, sem utilizar de forma alguma negrito com asteriscos duplos (como por exemplo **texto**). Deixe o texto limpo com traços ou quebras de linha para destacar os pontos relevantes de forma legível.\\n\\n";
-        let gabaritoLista = "\\nGabarito Técnico de Referência:\\n";
+        let promptTexto = "Atue como um instrutor analítico em Ciência de Dados. Avalie as escolhas do usuário abaixo, compare com o gabarito fornecido e retorne uma avaliação técnica, sem utilizar negrito com asteriscos duplos (**). Use espaçamento limpo e traços se necessário para estruturar.\n\n";
         
-        bancoQuestoes.forEach(q => {
-            const selecionado = document.querySelector(`input[name="q${q.id}"]:checked`);
+        for (let i = 1; i <= 6; i++) {
+            const selecionado = document.querySelector(`input[name="q${i}"]:checked`);
             if (selecionado) {
-                promptTexto += `Instância ${q.id}: Resposta submetida pelo usuário = Opção [${selecionado.value}]\\n`;
+                promptTexto += `Instância ${i}: Resposta submetida pelo usuário = Opção [${selecionado.value}]\n`;
             } else {
-                promptTexto += `Instância ${q.id}: Nenhuma opção selecionada pelo usuário.\\n`;
+                promptTexto += `Instância ${i}: Nenhuma opção selecionada pelo usuário.\n`;
             }
-            gabaritoLista += `Q${q.id}: ${q.correta}\\n`;
-        });
+        }
         
-        promptTexto += gabaritoLista;
-        promptTexto += "\\nInstruções de Resposta: Apresente o total de acertos e forneça uma revisão curta por linha para cada item indicando o status (Correto ou Incorreto) e explicando sucintamente a lógica de forma elegante e limpa.";
+        promptTexto += "\nGabarito Técnico de Referência:\nQ1: B\nQ2: B\nQ3: C\nQ4: C\nQ5: B\nQ6: B\n\nInstruções de Resposta: Apresente o total de acertos e forneça uma revisão curta por linha para cada item indicando o status (Correto ou Incorreto) e explicando sucintamente a lógica de forma elegante e limpa.";
 
         btnProcessar.disabled = true;
         statusCarregando.style.display = "block";
@@ -133,10 +314,11 @@
             const dadosObtidos = await requisicao.json();
 
             if (dadosObtidos && dadosObtidos.status && dadosObtidos.BK9) {
+                // Remove possíveis formatações markdown de negrito que a API possa retornar por padrão
                 let textoTratado = dadosObtidos.BK9.replace(/\*\*/g, '');
                 respostaIA.innerHTML = textoTratado;
             } else {
-                respostaIA.innerHTML = "Falha crítica: O motor analítico retornou uma estrutura de dados inválida.";
+                respostaIA.innerHTML = "Falha crítica: O motor analítico retornou uma estrutura de dados corrompida ou inválida.";
             }
         } catch (erro) {
             console.error(erro);
@@ -148,8 +330,6 @@
             window.scrollTo({top: blocoResultado.offsetTop, behavior: 'smooth'});
         }
     }
-
-    window.onload = carregarQuestoesDoArquivo;
 </script>
 
 </body>
