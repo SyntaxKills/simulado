@@ -1,0 +1,41 @@
+1. Durante a fase inicial de um projeto de inteligência artificial, por que um analista deve conduzir uma Análise Exploratória de Dados (EDA) antes de treinar qualquer modelo preditivo?
+a) Para ignorar a etapa de tratamento de dados e economizar tempo de processamento.
+b) Para mapear o comportamento das variáveis, reconhecer anomalias e descobrir padrões ocultos na base.
+c) Para converter automaticamente todas as colunas de texto em formato numérico.
+d) Para reduzir obrigatoriamente o volume do banco de dados para menos de mil registros.
+Gabarito: B
+
+2. Quais recursos visuais de estatística são amplamente recomendados para avaliar a dispersão, os limites e o comportamento de frequência das variáveis na EDA?
+a) Gráficos de pizza com efeitos tridimensionais e logotipos corporativos.
+b) Histogramas e diagramas Boxplot.
+c) Listas de texto puro ordenadas por ordem alfabética.
+d) Diagramas de fluxo de blocos de servidores de rede.
+Gabarito: B
+
+3. Ao analisar a estrutura de um gráfico Boxplot, quais parâmetros estatísticos de posição dividem o conjunto de dados ordenado em fatias equivalentes de 25%?
+a) O valor médio, a variância amostral e o desvio padrão.
+b) O limite mínimo absoluto e o limite máximo absoluto.
+c) A mediana, o primeiro quartil e o terceiro quartil.
+d) A média aritmética simples e o erro padrão da amostra.
+Gabarito: C
+
+4. Trabalhando com a biblioteca Pandas em Python, qual método sintetiza de forma automatizada indicadores como média, desvio padrão, mínimos, máximos e quartis de um DataFrame?
+a) df.head()
+b) df.sum()
+c) df.describe()
+d) df.show_all()
+Gabarito: C
+
+5. Em ciência de dados, como podemos caracterizar conceitualmente um outlier presente em uma população de dados?
+a) Um dado numérico que corresponde exatamente ao ponto central da média.
+b) Uma observação atípica que exibe um distanciamento extremo e discrepante em relação ao padrão do restante do grupo.
+c) Qualquer registro numérico que assuma um valor menor que zero.
+d) A variável de categoria que apresenta a maior taxa de repetição na amostra.
+Gabarito: B
+
+6. Se uma base de dados contendo o faturamento de pequenas lojas de bairro incluir por engano o faturamento de uma multinacional bilionária, qual será o impacto dessa anomalia na média aritmética?
+a) A média permanecerá inalterada, mantendo a representatividade do grupo original.
+b) A média sofrerá uma distorção severa, sendo puxada para cima e deixando de refletir a realidade da maioria das pequenas empresas.
+c) O cálculo da média será automaticamente bloqueado pelo interpretador Python.
+d) A média passará a espelhar perfeitamente o valor exato da moda.
+Gabarito: B
