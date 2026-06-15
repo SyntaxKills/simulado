@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface de Simulado - Modo Dinâmico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Módulo de Avaliação Cognitiva</h1>
+        <p>Interface Dinâmica conectada ao questions.txt</p>
+    </header>
+    
+    <div id="container-erro" style="display: none;"></div>
+
+    <form id="formularioQuiz">
+        <div id="espaco-perguntas"></div>
+
+        <button type="button" id="btnProcessar" class="botao-comando" onclick="executarDiagnostico()">Transmitir Respostas para Validação da IA</button>
+    </form>
+
+    <div id="statusCarregando" class="status-carregamento">Analisando dados com o motor remoto Gemini... Por favor, aguarde.</div>
+    
+    <div id="bloco-resultado">
+        <h2 class="titulo-resultado">Diagnóstico de Desempenho</h2>
+        <div id="respostaIA" class="painel-ia"></div>
+    </div>
+</div>
+
+<script>
+    let bancoQuestoes = [];
+
+    async function carregarQuestoesDoArquivo() {
+        const espacoPerguntas = document.getElementById('espaco-perguntas');
+        const containerErro = document.getElementById('container-erro');
+        
+        try {
+            const respostaTxt = await fetch('questions.txt');
+            if (!respostaTxt.ok) {
+                throw new Error('Não foi possível localizar ou ler o arquivo questions.txt na raiz do diretório.');
+            }
+            
+            const textoBruto = await respostaTxt.text();
+            const blocos = textoBruto.split(/\n\s*\n/);
+            let idQuestao = 1;
+            
+            blocos.forEach(bloco => {
+                const linhas = bloco.trim().split('\n');
+                if (linhas.length >= 6) {
+                    let enunciado = linhas[0];
+                    let altA = linhas[1];
+                    let altB = linhas[2];
+                    let altC = linhas[3];
+                    let altD = líneas[4];
+                    let gabarito = linhas[5].replace('Gabarito:', '').trim();
+                    
+                    bancoQuestoes.push({
+                        id: idQuestao,
+                        enunciado: enunciado,
+                        opcoes: [altA, altB, altC, altD],
+                        correta: gabarito
+                    });
+                    
+                    let htmlCard = `
+                        <div class="cartao-questao">
+                            <span class="num-questao">Instância ${String(idQuestao).padStart(2, '0')}</span>
+                            <div class="texto-questao">${enunciado}</div>
+                            <ul class="lista-opcoes">
+                    `;
+                    
+                    const letras = ['A', 'B', 'C', 'D'];
+                    for (let j = 0; j < 4; j++) {
+                        htmlCard += `
+                            <li class="opcao-item">
+                                <label class="opcao-label">
+                                    <input type="radio" name="q${idQuestao}" value="${letras[j]}" class="opcao-input">
+                                    ${linhas[j+1]}
+                                </label>
+                            </li>
+                        `;
+                    }
+                    
+                    htmlCard += `</ul></div>`;
+                    espacoPerguntas.innerHTML += htmlCard;
+                    idQuestao++;
+                }
+            });
+            
+        } catch (erro) {
+            containerErro.style.display = 'block';
+            containerErro.className = 'status-erro';
+            containerErro.innerHTML = `Erro de inicialização: ${erro.message}<br>Verifique se o arquivo questions.txt está na mesma pasta da sua página web.`;
+        }
+    }
+
+    async function executarDiagnostico() {
+        const blocoResultado = document.getElementById('bloco-resultado');
+        const respostaIA = document.getElementById('respostaIA');
+        const statusCarregando = document.getElementById('statusCarregando');
+        const btnProcessar = document.getElementById('btnProcessar');
+        
+        if (bancoQuestoes.length === 0) {
+            alert('Nenhuma questão carregada da base de dados.');
+            return;
+        }
+
+        let promptTexto = "Atue como um instrutor analítico em Ciência de Dados. Avalie as escolhas do usuário abaixo, compare com o gabarito fornecido e retorne uma avaliação técnica, sem utilizar de forma alguma negrito com asteriscos duplos (como por exemplo **texto**). Deixe o texto limpo com traços ou quebras de linha para destacar os pontos relevantes de forma legível.\\n\\n";
+        let gabaritoLista = "\\nGabarito Técnico de Referência:\\n";
+        
+        bancoQuestoes.forEach(q => {
+            const selecionado = document.querySelector(`input[name="q${q.id}"]:checked`);
+            if (selecionado) {
+                promptTexto += `Instância ${q.id}: Resposta submetida pelo usuário = Opção [${selecionado.value}]\\n`;
+            } else {
+                promptTexto += `Instância ${
+
