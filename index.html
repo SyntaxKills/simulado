@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Simulado - Ciência de Dados</title>
+    <title>Interface de Simulado Integrado - Engenharia de Sistemas</title>
     <style>
         :root {
             --bg-principal: #0a0c10;
@@ -59,6 +59,31 @@
         header p {
             color: var(--texto-secundario);
             font-size: 1rem;
+        }
+
+        .secao-categoria {
+            margin-top: 45px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--azul-neon);
+            padding-left: 15px;
+        }
+
+        .secao-categoria h2 {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--texto-principal);
+        }
+
+        .resumo-tecnico {
+            background-color: rgba(33, 38, 45, 0.4);
+            border: 1px dashed var(--borda);
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+            text-align: justify;
         }
 
         .cartao-questao {
@@ -142,7 +167,8 @@
             border-radius: 8px;
             cursor: pointer;
             transition: opacity 0.2s ease, transform 0.1s ease;
-            margin-top: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
 
         .botao-comando:hover {
@@ -197,89 +223,328 @@
 <div class="container">
     <header>
         <h1>Módulo de Avaliação Cognitiva</h1>
-        <p>Análise Exploratória de Dados e Fundamentos de Data Science</p>
+        <p>Simulado Acadêmico Multidisciplinar Integrado</p>
     </header>
     
     <form id="formularioQuiz">
-        <!-- Questão 1 -->
+        
+        <div class="secao-categoria">
+            <h2>Aprendizado de Máquina</h2>
+        </div>
+        <div class="resumo-tecnico">
+            Os Algoritmos Genéticos utilizam a lógica computacional inspirada em teorias biológicas para resolver problemas complexos. Eles simulam a evolução natural manipulando estruturas de dados que representam conjuntos de dados e critérios de aptidão. Através de operadores matemáticos que mimetizam a hereditariedade e a variação biológica, o algoritmo busca de forma iterativa as soluções mais eficientes dentro de um espaço de busca.
+        </div>
+
         <div class="cartao-questao">
             <span class="num-questao">Instância 01</span>
-            <div class="texto-questao">Durante a fase inicial de um projeto de inteligência artificial, por que um analista deve conduzir uma Análise Exploratória de Dados (EDA) antes de treinar qualquer modelo preditivo?</div>
+            <div class="texto-questao">Na computação, os Algoritmos Genéticos são inspirados principalmente em qual teoria científica?</div>
             <ul class="lista-opcoes">
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="A" class="opcao-input"> a) Para ignorar a etapa de tratamento de dados e economizar tempo de processamento.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="B" class="opcao-input"> a) b) Para mapear o comportamento das variáveis, reconhecer anomalias e descobrir padrões ocultos na base.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="C" class="opcao-input"> c) Para converter automaticamente todas as colunas de texto em formato numérico.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="D" class="opcao-input"> d) Para reduzir obrigatoriamente o volume do banco de dados para menos de mil registros.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="A" class="opcao-input"> A) Teoria da Relatividade Geral.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="B" class="opcao-input"> B) Teoria da Evolução das Espécies e Seleção Natural.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="C" class="opcao-input"> C) Mecânica Quântica.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q1" value="D" class="opcao-input"> D) Teoria do Caos Dinâmico.</label></li>
             </ul>
         </div>
 
-        <!-- Questão 2 -->
         <div class="cartao-questao">
             <span class="num-questao">Instância 02</span>
-            <div class="texto-questao">Quais recursos visuais de estatística são amplamente recomendados para avaliar a dispersão, os limites e o comportamento de frequência das variáveis na EDA?</div>
+            <div class="texto-questao">O que representa o conceito de "População" nesse tipo de algoritmo?</div>
             <ul class="lista-opcoes">
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="A" class="opcao-input"> a) Gráficos de pizza com efeitos tridimensionais e logotipos corporativos.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="B" class="opcao-input"> b) Histogramas e diagramas Boxplot.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="C" class="opcao-input"> c) Listas de texto puro ordenadas por ordem alfabética.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="D" class="opcao-input"> d) Diagramas de fluxo de blocos de servidores de rede.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="A" class="opcao-input"> A) O conjunto de todas as restrições e regras matemáticas que o código deve seguir.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="B" class="opcao-input"> B) O total de computadores conectados em rede para rodar o sistema.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="C" class="opcao-input"> C) Um conjunto de possíveis soluções para o problema que está sendo resolvido.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q2" value="D" class="opcao-input"> D) O histórico de erros que o programa gerou durante a execução.</label></li>
             </ul>
         </div>
 
-        <!-- Questão 3 -->
         <div class="cartao-questao">
             <span class="num-questao">Instância 03</span>
-            <div class="texto-questao">Ao analisar a estrutura de um gráfico Boxplot, quais parâmetros estatísticos de posição dividem o conjunto de dados ordenado em fatias equivalentes de 25%?</div>
+            <div class="texto-questao">Qual é o objetivo principal da "Função de Fitness" (ou Função de Aptidão)?</div>
             <ul class="lista-opcoes">
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="A" class="opcao-input"> a) O valor médio, a variância amostral e o desvio padrão.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="B" class="opcao-input"> b) O limite mínimo absoluto e o limite máximo absoluto.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="C" class="opcao-input"> c) A mediana, o primeiro quartil e o terceiro quartil.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="D" class="opcao-input"> d) A média aritmética simples e o erro padrão da amostra.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="A" class="opcao-input"> A) Medir a qualidade de uma solução e dar uma nota para saber o quão boa ela é.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="B" class="opcao-input"> B) Reiniciar o programa de forma automática quando ocorre um travamento.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="C" class="opcao-input"> C) Traduzir o código de uma linguagem de programação para outra.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q3" value="D" class="opcao-input"> D) Reduzir o espaço de armazenamento que o algoritmo ocupa no disco rígido.</label></li>
             </ul>
         </div>
 
-        <!-- Questão 4 -->
         <div class="cartao-questao">
             <span class="num-questao">Instância 04</span>
-            <div class="texto-questao">Trabalhando com a biblioteca Pandas em Python, qual método sintetiza de forma automatizada indicadores como média, desvio padrão, mínimos, máximos e quartis de um DataFrame?</div>
+            <div class="texto-questao">O operador de "Crossover" (também chamado de cruzamento) serve para:</div>
             <ul class="lista-opcoes">
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="A" class="opcao-input"> a) df.head()</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="B" class="opcao-input"> b) df.sum()</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="C" class="opcao-input"> c) df.describe()</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="D" class="opcao-input"> d) df.show_all()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="A" class="opcao-input"> A) Excluir as piores soluções da memória de maneira definitiva.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="B" class="opcao-input"> B) Combinar partes de duas soluções "pais" para gerar novas soluções "filhas".</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="C" class="opcao-input"> C) Alterar um único bit de uma solução de forma totalmente aleatória.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q4" value="D" class="opcao-input"> D) Interromper a execução do algoritmo assim que o tempo limite é atingido.</label></li>
             </ul>
         </div>
 
-        <!-- Questão 5 -->
         <div class="cartao-questao">
             <span class="num-questao">Instância 05</span>
-            <div class="texto-questao">Em ciência de dados, como podemos caracterizar conceitualmente um outlier presente em uma população de dados?</div>
+            <div class="texto-questao">Qual é o papel do operador de "Mutação" in um algoritmo genético?</div>
             <ul class="lista-opcoes">
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="A" class="opcao-input"> a) Um dado numérico que corresponde exatamente ao ponto central da média.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="B" class="opcao-input"> b) Uma observação atípica que exibe um distanciamento extremo e discrepante em relação ao padrão do restante do grupo.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="C" class="opcao-input"> c) Qualquer registro numérico que assuma um valor menor que zero.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="D" class="opcao-input"> d) A variável de categoria que apresenta a maior taxa de repetição na amostra.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="A" class="opcao-input"> A) Copiar a melhor solução da geração anterior repetidas vezes para garantir que ela não se perca.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="B" class="opcao-input"> B) Dobrar o tamanho da população a cada ciclo de processamento.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="C" class="opcao-input"> C) Garantir que todas as soluções se tornem idênticas o mais rápido possível.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q5" value="D" class="opcao-input"> D) Modificar aleatoriamente pequenos pedaços de uma solução para trazer novidade e evitar que o algoritmo fique travado.</label></li>
             </ul>
         </div>
 
-        <!-- Questão 6 -->
+        <div class="secao-categoria">
+            <h2>Modelagem em Banco de Dados</h2>
+        </div>
+        <div class="resumo-tecnico">
+            A restrição de integridade e a associação de tabelas em ambientes relacionais baseiam-se em regras quantitativas de mapeamento lógico. As cardinalidades mínimas estabelecem a obrigatoriedade ou opcionalidade do vínculo, enquanto as cardinalidades máximas limitam o teto do relacionamento estrutural. A correta definição desses parâmetros em diagramas lógicos evita a redundância de dados e preserva as regras de negócio durante a persistência.
+        </div>
+
         <div class="cartao-questao">
             <span class="num-questao">Instância 06</span>
-            <div class="texto-questao">Se uma base de dados contendo o faturamento de pequenas lojas de bairro incluir por engano o faturamento de uma multinacional bilionária, qual será o impacto dessa anomalia na média aritmética?</div>
+            <div class="texto-questao">Se uma regra de negócio determina que um cliente pode realizar várias compras, mas uma compra específica pertence a apenas um cliente, qual é o grau de cardinalidade (cardinalidade máxima) desse relacionamento olhando para ambos os sentidos?</div>
             <ul class="lista-opcoes">
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="A" class="opcao-input"> a) A média permanecerá inalterada, mantendo a representatividade do grupo original.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="B" class="opcao-input"> b) A média sofrerá uma distorção severa, sendo puxada para cima e deixando de refletir a realidade da maioria das pequenas empresas.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="C" class="opcao-input"> c) O cálculo da média será automaticamente bloqueado pelo interpretador Python.</label></li>
-                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="D" class="opcao-input"> d) A média passará a espelhar perfeitamente o valor exato da moda.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="A" class="opcao-input"> A) 1:1</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="B" class="opcao-input"> B) 1:N</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="C" class="opcao-input"> C) N:N</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q6" value="D" class="opcao-input"> D) 0:1</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 07</span>
+            <div class="texto-questao">O que indica uma cardinalidade mínima representada pelo número 0 (zero) no Modelo Entidade-Relacionamento?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q7" value="A" class="opcao-input"> A) A associação entre as entidades é obrigatória.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q7" value="B" class="opcao-input"> B) A associação entre as entidades é opcional, ou seja, pode não existir um correspondente na outra entidade.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q7" value="C" class="opcao-input"> C) O relacionamento possui um erro estrutural e deve ser apagado.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q7" value="D" class="opcao-input"> D) O registro pode se conectar a infinitas ocorrências da outra tabela.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 08</span>
+            <div class="texto-questao">Quando analisamos a relação entre a entidade "Funcionário" e a entidade "Dependente", onde nem todo funcionário tem dependentes, mas todo dependente obrigatoriamente pertence a um único funcionário, quais são as cardinalidades mínima e máxima de um "Funcionário" em relação a "Dependentes"?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q8" value="A" class="opcao-input"> A) (1, 1)</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q8" value="B" class="opcao-input"> B) (1, N)</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q8" value="C" class="opcao-input"> C) (0, 1)</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q8" value="D" class="opcao-input"> D) (0, N)</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 09</span>
+            <div class="texto-questao">Como deve ser representada a notação padrão de cardinalidade de uma entidade no diagrama quando queremos mostrar os valores mínimo e máximo combinados?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q9" value="A" class="opcao-input"> A) máxima / mínima</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q9" value="B" class="opcao-input"> B) mínima + máxima</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q9" value="C" class="opcao-input"> C) mínima, máxima</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q9" value="D" class="opcao-input"> D) máxima : mínima</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 10</span>
+            <div class="texto-questao">Um relacionamento onde uma ocorrência da Entidade A se conecta com muitas ocorrências da Entidade B, e uma ocorrência da Entidade B também se conecta com muitas ocorrências da Entidade A, possui qual grau de cardinalidade?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q10" value="A" class="opcao-input"> A) 1:1</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q10" value="B" class="opcao-input"> B) N:N</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q10" value="C" class="opcao-input"> C) 1:N</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q10" value="D" class="opcao-input"> D) N:1</label></li>
+            </ul>
+        </div>
+
+        <div class="secao-categoria">
+            <h2>Segurança da Informação</h2>
+        </div>
+        <div class="resumo-tecnico">
+            O gerenciamento de riscos e planos de contingência operacional baseiam-se em salvaguardas tecnológicas estruturadas. A política de proteção adota rotinas de cópias baseadas em ponteiros de modificação de arquivos, dividindo as estratégias entre rotinas parciais, cumulativas ou integrais. Testes de integridade física e o isolamento geográfico de mídias garantem a continuidade dos negócios contra ameaças internas e externas.
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 11</span>
+            <div class="texto-questao">Como a maioria das ferramentas de backup identifica, de forma lógica e automatizada, se um determinado arquivo precisa ou não ser copiado durante os processos Full e Incremental?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q11" value="A" class="opcao-input"> a) Analisando o tamanho final do arquivo em bytes e bloqueando arquivos muito leves.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q11" value="B" class="opcao-input"> b) Verificando a presença de vírus e spywares no código-fonte do arquivo.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q11" value="C" class="opcao-input"> c) Utilizando um atributo do arquivo (frequentemente chamado de ponteiro ou bit de arquivo) que indica se ele foi criado, alterado ou já copiado.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q11" value="D" class="opcao-input"> d) Consultando o histórico de navegação na internet do colaborador que gerou o arquivo.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 12</span>
+            <div class="texto-questao">Um administrador de rede configurou uma rotina na qual o backup executado copia apenas os arquivos criados ou alterados que ainda não foram salvos (com o atributo marcado). Logo após realizar a cópia com sucesso, esse modelo desmarca o atributo do arquivo. Qual é esse tipo de backup?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q12" value="A" class="opcao-input"> a) Backup Diferencial.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q12" value="B" class="opcao-input"> b) Backup Cópia.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q12" value="C" class="opcao-input"> c) Backup Diário.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q12" value="D" class="opcao-input"> d) Backup Incremental.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 13</span>
+            <div class="texto-questao">Qual é a principal diferença operacional entre o Backup Incremental e o Backup Diferencial no que diz respeito ao comportamento do atributo do arquivo após a cópia?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q13" value="A" class="opcao-input"> a) O Incremental desmarca o atributo do arquivo após a cópia, enquanto o Diferencial não mexe nos atributos, mantendo-os marcados.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q13" value="B" class="opcao-input"> b) O Diferencial apaga o arquivo original do disco rígido, enquanto o Incremental mantém uma cópia fiel.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q13" value="C" class="opcao-input"> c) O Incremental duplica o volume total do banco de dados e o Diferencial reduz para menos de mil registros.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q13" value="D" class="opcao-input"> d) O Diferencial só pode ser executado aos domingos e o Incremental roda exclusivamente em mídias de CD ou DVD.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 14</span>
+            <div class="texto-questao">No planejamento de uma política de segurança corporativa, o termo "Janela de Backup" refere-se especificamente a qual conceito?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q14" value="A" class="opcao-input"> a) Ao intervalo de anos em que uma fita magnética (como LTO ou DAT) mantém sua vida útil intacta.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q14" value="B" class="opcao-input"> b) À interface gráfica de usuário (janela do Windows) utilizada para arrastar arquivos manualmente para o servidor de arquivos.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q14" value="C" class="opcao-input"> c) Ao tempo disponível que a equipe de TI possui para executar o processo de backup em um determinado volume de dados sem interferir incorretamente na produção.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q14" value="D" class="opcao-input"> d) Ao assistente virtual automatizado que notifica o colaborador para salvar suas senhas.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 15</span>
+            <div class="texto-questao">Para garantir a eficiência e a real capacidade de sobrevivência de uma empresa após um incidente ou desastre de segurança, quais são as duas recomendações cruciais apontadas no texto sobre o armazenamento e gerenciamento das mídias?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q15" value="A" class="opcao-input"> a) Manter as mídias no mesmo rack dos servidores principais e salvá-las exclusivamente em disquetes.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q15" value="B" class="opcao-input"> b) Realizar testes periódicos de restauração (restore) e não armazenar as mídias físicas no mesmo local onde ficam os servidores operacionais.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q15" value="C" class="opcao-input"> c) Permitir que cada colaborador guarde seu próprio backup em sua estação de trabalho local e proibir o uso de servidores de arquivos centralizados.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q15" value="D" class="opcao-input"> d) Executar backups do tipo Full a cada hora do dia e ignorar a fase de análise de riscos.</label></li>
+            </ul>
+        </div>
+
+        <div class="secao-categoria">
+            <h2>Ciência de Dados</h2>
+        </div>
+        <div class="resumo-tecnico">
+            A fase exploratória avalia os dados de forma preliminar para identificar inconsistências e descrever distribuições estatísticas. Métricas de tendência posicional e o isolamento gráfico de desvios mitigam variações que afetam os cálculos centrais de médias. O emprego de comandos computacionais em matrizes de dados consolida esse mapeamento de forma ágil e estruturada.
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 16</span>
+            <div class="texto-questao">Qual é o principal objetivo de um analista ao conduzir uma Análise Exploratória de Dados (EDA) na fase inicial de um projeto de inteligência artificial?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q16" value="A" class="opcao-input"> a) Ignorar a etapa de tratamento de dados e economizar tempo de processamento.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q16" value="B" class="opcao-input"> b) Mapear o comportamento das variáveis, reconhecer anomalias e descobrir padrões ocultos na base.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q16" value="C" class="opcao-input"> c) Converter automaticamente todas as colunas de texto em formato numérico.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q16" value="D" class="opcao-input"> d) Reduzir obrigatoriamente o volume do banco de dados para menos de mil registros.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 17</span>
+            <div class="texto-questao">Quais recursos visuais de estatística são amplamente recomendados para avaliar a dispersão, os limites e o comportamento de frequência das variáveis na EDA?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q17" value="A" class="opcao-input"> a) Gráficos de pizza com efeitos tridimensionais e logotipos corporativos.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q17" value="B" class="opcao-input"> b) Histogramas e diagramas Boxplot.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q17" value="C" class="opcao-input"> c) Listas de texto puro ordenadas por ordem alfabética.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q17" value="D" class="opcao-input"> d) Diagramas de fluxo de blocos de servidores de rede.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 18</span>
+            <div class="texto-questao">Ao analisar a estrutura de um gráfico Boxplot, quais parâmetros estatísticos de posição dividem o conjunto de dados ordenado em fatias equivalentes de 25%?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q18" value="A" class="opcao-input"> a) O valor médio, a variância amostral e o desvio padrão.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q18" value="B" class="opcao-input"> b) O limite mínimo absoluto e o limite máximo absoluto.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q18" value="C" class="opcao-input"> c) A mediana, o primeiro quartil e o terceiro quartil.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q18" value="D" class="opcao-input"> d) A média aritmética simples e o erro padrão da amostra.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 19</span>
+            <div class="texto-questao">Trabalhando com a biblioteca Pandas em Python, qual método sintetiza de forma automatizada indicadores como média, desvio padrão, mínimos, máximos e quartis de um DataFrame?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q19" value="A" class="opcao-input"> a) df.head()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q19" value="B" class="opcao-input"> b) df.sum()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q19" value="C" class="opcao-input"> c) df.describe()</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q19" value="D" class="opcao-input"> d) df.show_all()</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 20</span>
+            <div class="texto-questao">Se uma base de dados contendo o faturamento de pequenas lojas de bairro incluir por engano o faturamento de uma multinacional bilionária, qual será o impacto dessa anomalia (outlier) na média aritmética?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q20" value="A" class="opcao-input"> a) A média permanecerá inalterada, mantendo a representatividade do grupo original.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q20" value="B" class="opcao-input"> b) A média sofrerá uma distorção severa, sendo puxada para cima e deixando de refletir a realidade da maioria das pequenas empresas.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q20" value="C" class="opcao-input"> c) O cálculo da média será automaticamente bloqueado pelo interpretador Python.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q20" value="D" class="opcao-input"> d) A média passará a espelhar perfeitamente o valor exato da moda.</label></li>
+            </ul>
+        </div>
+
+        <div class="secao-categoria">
+            <h2>Redes de Computadores e Sistemas Distribuídos</h2>
+        </div>
+        <div class="resumo-tecnico">
+            La transmissão distribuída integra infraestruturas físicas de transporte de sinais com lógicas complexas de teleprocessamento remoto. A comunicação depende da interação coordenada entre fontes, meios físicos e destinatários, lidando com formatos binários elementares de armazenamento e codificação. Modelos arquiteturais delimitam o controle centralizado ou o compartilhamento mútuo de serviços, convergindo para a descentralização transparente dos ativos de rede.
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 21</span>
+            <div class="texto-questao">O desenvolvimento histórico das redes de computadores envolveu a integração das tecnologias de processamento e comunicação, dando origem a conceitos como o teleprocessamento. Como o texto diferencia conceitualmente os termos "telecomunicações" e "teleprocessamento"?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q21" value="A" class="opcao-input"> a) Telecomunicações refere-se exclusivamente ao comércio eletrônico, enquanto o teleprocessamento cuida do entretenimento digital.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q21" value="B" class="opcao-input"> b) Telecomunicações é o veículo ou meio de transmissão (como satélites e linhas telefônicas), enquanto o teleprocessamento é o processamento de dados a distância utilizando esses recursos.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q21" value="C" class="opcao-input"> c) Teleprocessamento é o armazenamento local de arquivos em formato binário, enquanto as telecomunicações representam a conversão de bits em caracteres pelo sistema ASCII.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q21" value="D" class="opcao-input"> d) Ambos os termos são sinônimos perfeitos e descrevem apenas o funcionamento interno dos circuitos de um computador central.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 22</span>
+            <div class="texto-questao">Qualquer processo de comunicação, desde os primórdios até as redes de computadores modernas, necessita obrigatoriamente de quatro elementos fundamentais para acontecer. Quais são eles?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q22" value="A" class="opcao-input"> a) Computador central, HD, Intranet e Internet.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q22" value="B" class="opcao-input"> b) Sistema operacional, código binário, cabo de rede e impressora.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q22" value="C" class="opcao-input"> c) Fonte de informação (emissor), Informação (dados), Meio e Receptor (destino).</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q22" value="D" class="opcao-input"> d) Linhas telefônicas, micro-ondas, satélites e sinais elétricos.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 23</span>
+            <div class="texto-questao">Os computadores operam fundamentalmente por meio de sinais digitais em formato binário. Como são chamadas, respectivamente, a menor unidade de dado armazenada (representando os estados de ligado/desligado) e o conjunto agrupado de 8 dessas unidades?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q23" value="A" class="opcao-input"> a) ASCII e Byte.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q23" value="B" class="opcao-input"> b) Bit e Byte.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q23" value="C" class="opcao-input"> c) Caractere e ASCII.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q23" value="D" class="opcao-input"> d) Sinal Analógico e Sinal Digital.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 24</span>
+            <div class="texto-questao">As arquiteturas de redes atuais utilizam diferentes modelos para organizar a transmissão de dados e a gerência de recursos. Qual característica diferencia o modelo Cliente/Servidor do modelo Não-Hierárquico (Ponto a Ponto)?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="A" class="opcao-input"> a) O modelo cliente/servidor elimina a necessidade de cabos e meios de transmissão, enquanto o ponto a ponto exige satélites.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="B" class="opcao-input"> b) No modelo cliente/servidor existe uma hierarquia onde um equipamento diferenciado (servidor) controla os serviços centrais; já no modelo ponto a ponto não há hierarquia, e cada máquina pode alternar e exercer funções de cliente e servidor.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="C" class="opcao-input"> c) O modelo ponto a ponto é utilizado apenas quando a administração da rede é extremamente complexa e envolve milhares de dispositivos.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q24" value="D" class="opcao-input"> d) No modelo cliente/servidor, o usuário não sabe que os computadores estão interconectados, fazendo a rede parecer um sistema único e transparente.</label></li>
+            </ul>
+        </div>
+
+        <div class="cartao-questao">
+            <span class="num-questao">Instância 25</span>
+            <div class="texto-questao">O texto menciona que o que de fato trafega pelo meio de transmissão são os bits representados por sinais elétricos. De que formas esses sinais elétricos e os canais de transmissão podem se apresentar no ambiente físico?</div>
+            <ul class="lista-opcoes">
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q25" value="A" class="opcao-input"> a) Exclusivamente no formato de código ASCII de sete bits.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q25" value="B" class="opcao-input"> b) Unicamente como ondas de micro-ondas de alta frequência.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q25" value="C" class="opcao-input"> c) Podem ser do tipo analógico ou digital.</label></li>
+                <li class="opcao-item"><label class="opcao-label"><input type="radio" name="q25" value="D" class="opcao-input"> d) Apenas como texto puro convertido em formato binário.</label></li>
             </ul>
         </div>
 
         <button type="button" id="btnProcessar" class="botao-comando" onclick="executarDiagnostico()">Transmitir Respostas para Validação da IA</button>
     </form>
 
-    <div id="statusCarregando" class="status-carregamento">Estabelecendo conexão com o motor analítico Gemini... Aguarde processamento.</div>
+    <div id="statusCarregando" class="status-carregamento">Estabelecendo conexão com o motor analítico Gemini... Aguarde processamento das 25 instâncias.</div>
     
     <div id="bloco-resultado">
-        <h2 class="titulo-resultado">Diagnóstico de Desempenho</h2>
+        <h2 class="titulo-resultado">Diagnóstico de Desempenho Global</h2>
         <div id="respostaIA" class="painel-ia"></div>
     </div>
 </div>
@@ -291,9 +556,9 @@
         const statusCarregando = document.getElementById('statusCarregando');
         const btnProcessar = document.getElementById('btnProcessar');
         
-        let promptTexto = "Atue como um instrutor analítico em Ciência de Dados. Avalie as escolhas do usuário abaixo, compare com o gabarito fornecido e retorne uma avaliação técnica, sem utilizar negrito com asteriscos duplos (**). Use espaçamento limpo e traços se necessário para estruturar.\n\n";
+        let promptTexto = "Atue como um instrutor acadêmico e analítico de Engenharia de Sistemas e Dados. Avalie as escolhas do usuário abaixo, compare com o gabarito fornecido e retorne uma avaliação técnica abrangente estruturada por categoria, sem utilizar negrito com asteriscos duplos (**). Use espaçamento limpo e traços se necessário para estruturar de forma extremamente profissional.\n\n";
         
-        for (let i = 1; i <= 6; i++) {
+        for (let i = 1; i <= 25; i++) {
             const selecionado = document.querySelector(`input[name="q${i}"]:checked`);
             if (selecionado) {
                 promptTexto += `Instância ${i}: Resposta submetida pelo usuário = Opção [${selecionado.value}]\n`;
@@ -302,7 +567,7 @@
             }
         }
         
-        promptTexto += "\nGabarito Técnico de Referência:\nQ1: B\nQ2: B\nQ3: C\nQ4: C\nQ5: B\nQ6: B\n\nInstruções de Resposta: Apresente o total de acertos e forneça uma revisão curta por linha para cada item indicando o status (Correto ou Incorreto) e explicando sucintamente a lógica de forma elegante e limpa.";
+        promptTexto += "\nGabarito Técnico de Referência:\nQ1: B\nQ2: C\nQ3: A\nQ4: B\nQ5: D\nQ6: B\nQ7: B\nQ8: D\nQ9: C\nQ10: B\nQ11: C\nQ12: D\nQ13: A\nQ14: C\nQ15: B\nQ16: B\nQ17: B\nQ18: C\nQ19: C\nQ20: B\nQ21: B\nQ22: C\nQ23: B\nQ24: B\nQ25: C\n\nInstruções de Resposta: Apresente a métrica consolidada de acertos (ex: X de 25) e agrupe o feedback resumido por matéria, apontando o status de cada item (Correto ou Incorreto) seguido de justificativa curta e polida.";
 
         btnProcessar.disabled = true;
         statusCarregando.style.display = "block";
@@ -314,7 +579,6 @@
             const dadosObtidos = await requisicao.json();
 
             if (dadosObtidos && dadosObtidos.status && dadosObtidos.BK9) {
-                // Remove possíveis formatações markdown de negrito que a API possa retornar por padrão
                 let textoTratado = dadosObtidos.BK9.replace(/\*\*/g, '');
                 respostaIA.innerHTML = textoTratado;
             } else {
